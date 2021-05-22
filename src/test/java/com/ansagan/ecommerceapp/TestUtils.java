@@ -51,7 +51,7 @@ public class TestUtils {
         cart.setId(1L);
         List<Item> items = createItems();
         cart.setItems(createItems());
-        cart.setTotal(items.stream().map(Item::getPrice).reduce(BigDecimal::add).orElseThrow());
+        cart.setTotal(items.stream().map(Item::getPrice).reduce(BigDecimal::add).get());
         cart.setUser(user);
 
         return cart;

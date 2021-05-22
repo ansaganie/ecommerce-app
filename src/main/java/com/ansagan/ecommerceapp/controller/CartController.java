@@ -52,7 +52,7 @@ public class CartController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 		Optional<Item> item = itemRepository.findById(request.getItemId());
-		if(item.isEmpty()) {
+		if(!item.isPresent()) {
 			log.error("[ADD TO CART] [Fail] for item : " + request.getItemId() +", REASON : Item not found" );
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}

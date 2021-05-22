@@ -17,9 +17,4 @@ public class EcommerceAppApplication {
 	public BCryptPasswordEncoder bCryptPasswordEncoder(){
 		return new BCryptPasswordEncoder();
 	}
-
-	@Bean
-	public WebApplicationType getIt() {
-		return WebApplicationType.SERVLET;
-	}
 }

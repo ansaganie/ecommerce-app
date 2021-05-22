@@ -26,9 +26,11 @@ public class CreateUserRequest {
 		this.username = username;
 	}
 
-    public void setPassword(String testPassword) {
+    public void setPassword(String password) {
+		this.password = password;
     }
 
-	public void setConfirmPassword(String testPassword) {
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
 	}
 }

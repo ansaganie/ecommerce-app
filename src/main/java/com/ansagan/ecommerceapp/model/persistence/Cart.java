@@ -19,7 +19,6 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
-@Table(name = "cart")
 public class Cart {
 	
 	@Id

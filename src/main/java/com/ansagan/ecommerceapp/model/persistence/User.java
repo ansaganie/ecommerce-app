@@ -15,7 +15,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @Entity
-@Table(name = "user")
 public class User {
 
 	@Id
@@ -64,4 +63,8 @@ public class User {
     public String getPassword() {
 		return password;
     }
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 }

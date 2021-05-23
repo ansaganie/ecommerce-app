@@ -11,7 +11,7 @@
 	<groupId>com.ansagan</groupId>
 	<artifactId>ecommerce-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>ecommerce-app</name>
 	<description>Udacity Nanodegree Java Development course</description>
 	<properties>

@@ -1,7 +1,7 @@
 package com.ansagan.ecommerceapp.controller;
 
-import com.ansagan.ecommerceapp.model.persistence.Item;
-import com.ansagan.ecommerceapp.model.persistence.repositories.ItemRepository;
+import com.ansagan.ecommerceapp.model.Item;
+import com.ansagan.ecommerceapp.repositories.ItemRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

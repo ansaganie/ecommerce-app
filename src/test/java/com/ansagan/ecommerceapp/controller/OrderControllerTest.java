@@ -1,9 +1,9 @@
 package com.ansagan.ecommerceapp.controller;
 
-import com.ansagan.ecommerceapp.model.persistence.User;
-import com.ansagan.ecommerceapp.model.persistence.UserOrder;
-import com.ansagan.ecommerceapp.model.persistence.repositories.OrderRepository;
-import com.ansagan.ecommerceapp.model.persistence.repositories.UserRepository;
+import com.ansagan.ecommerceapp.model.User;
+import com.ansagan.ecommerceapp.model.UserOrder;
+import com.ansagan.ecommerceapp.repositories.OrderRepository;
+import com.ansagan.ecommerceapp.repositories.UserRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

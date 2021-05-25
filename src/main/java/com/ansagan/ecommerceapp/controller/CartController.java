@@ -3,15 +3,16 @@ package com.ansagan.ecommerceapp.controller;
 import java.util.Optional;
 import java.util.stream.IntStream;
 
-import com.ansagan.ecommerceapp.model.persistence.Cart;
-import com.ansagan.ecommerceapp.model.persistence.Item;
-import com.ansagan.ecommerceapp.model.persistence.User;
-import com.ansagan.ecommerceapp.model.persistence.repositories.CartRepository;
-import com.ansagan.ecommerceapp.model.persistence.repositories.ItemRepository;
-import com.ansagan.ecommerceapp.model.persistence.repositories.UserRepository;
+import com.ansagan.ecommerceapp.model.Cart;
+import com.ansagan.ecommerceapp.model.Item;
+import com.ansagan.ecommerceapp.model.User;
+import com.ansagan.ecommerceapp.repositories.CartRepository;
+import com.ansagan.ecommerceapp.repositories.ItemRepository;
+import com.ansagan.ecommerceapp.repositories.UserRepository;
 import com.ansagan.ecommerceapp.model.requests.ModifyCartRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,17 +24,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/cart")
 public class CartController {
 
-	private final UserRepository userRepository;
-	private final CartRepository cartRepository;
-	private final ItemRepository itemRepository;
+	@Autowired
+	private UserRepository userRepository;
+
+	@Autowired
+	private CartRepository cartRepository;
+
+	@Autowired
+	private ItemRepository itemRepository;
 
 	private final Logger log = LoggerFactory.getLogger(CartController.class);
-
-	public CartController(UserRepository userRepository, CartRepository cartRepository, ItemRepository itemRepository) {
-		this.userRepository = userRepository;
-		this.cartRepository = cartRepository;
-		this.itemRepository = itemRepository;
-	}
 
 	@PostMapping("/addToCart")
 	public ResponseEntity<Cart> addToCart(@RequestBody ModifyCartRequest request) {

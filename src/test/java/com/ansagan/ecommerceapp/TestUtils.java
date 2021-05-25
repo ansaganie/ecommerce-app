@@ -1,9 +1,9 @@
 package com.ansagan.ecommerceapp;
 
-import com.ansagan.ecommerceapp.model.persistence.Cart;
-import com.ansagan.ecommerceapp.model.persistence.Item;
-import com.ansagan.ecommerceapp.model.persistence.User;
-import com.ansagan.ecommerceapp.model.persistence.UserOrder;
+import com.ansagan.ecommerceapp.model.Cart;
+import com.ansagan.ecommerceapp.model.Item;
+import com.ansagan.ecommerceapp.model.User;
+import com.ansagan.ecommerceapp.model.UserOrder;
 
 import java.lang.reflect.Field;
 import java.math.BigDecimal;

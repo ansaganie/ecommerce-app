@@ -1,11 +1,12 @@
 package com.ansagan.ecommerceapp.controller;
 
-import com.ansagan.ecommerceapp.model.persistence.Cart;
-import com.ansagan.ecommerceapp.model.persistence.User;
-import com.ansagan.ecommerceapp.model.persistence.repositories.CartRepository;
-import com.ansagan.ecommerceapp.model.persistence.repositories.UserRepository;
+import com.ansagan.ecommerceapp.model.Cart;
+import com.ansagan.ecommerceapp.model.User;
+import com.ansagan.ecommerceapp.repositories.CartRepository;
+import com.ansagan.ecommerceapp.repositories.UserRepository;
 import com.ansagan.ecommerceapp.model.requests.CreateUserRequest;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,21 +22,16 @@ import org.slf4j.Logger;
 @RequestMapping("/api/user")
 public class UserController {
 
+	@Autowired
 	private UserRepository userRepository;
+
+	@Autowired
 	private CartRepository cartRepository;
+	
+	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	private final Logger log = LoggerFactory.getLogger(UserController.class);
-
-	public UserController(UserRepository userRepository, CartRepository cartRepository,
-						  BCryptPasswordEncoder bCryptPasswordEncoder) {
-		this.userRepository = userRepository;
-		this.cartRepository = cartRepository;
-		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-	}
-
-    public UserController() {
-    }
 
     @GetMapping("/id/{id}")
 	public ResponseEntity<User> findById(@PathVariable Long id) {

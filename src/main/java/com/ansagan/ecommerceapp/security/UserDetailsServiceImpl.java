@@ -1,7 +1,7 @@
 package com.ansagan.ecommerceapp.security;
 
-import com.ansagan.ecommerceapp.model.persistence.User;
-import com.ansagan.ecommerceapp.model.persistence.repositories.UserRepository;
+import com.ansagan.ecommerceapp.model.User;
+import com.ansagan.ecommerceapp.repositories.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

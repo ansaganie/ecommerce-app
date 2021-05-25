@@ -1,4 +1,4 @@
-package com.ansagan.ecommerceapp.model.persistence;
+package com.ansagan.ecommerceapp.model;
 
 import java.math.BigDecimal;
 

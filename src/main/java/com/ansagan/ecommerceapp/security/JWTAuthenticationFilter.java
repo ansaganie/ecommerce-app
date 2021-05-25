@@ -1,6 +1,6 @@
 package com.ansagan.ecommerceapp.security;
 
-import com.ansagan.ecommerceapp.model.persistence.User;
+import com.ansagan.ecommerceapp.model.User;
 import com.auth0.jwt.JWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;

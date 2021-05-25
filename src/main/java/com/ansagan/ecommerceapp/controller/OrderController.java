@@ -2,12 +2,13 @@ package com.ansagan.ecommerceapp.controller;
 
 import java.util.List;
 
-import com.ansagan.ecommerceapp.model.persistence.User;
-import com.ansagan.ecommerceapp.model.persistence.UserOrder;
-import com.ansagan.ecommerceapp.model.persistence.repositories.OrderRepository;
-import com.ansagan.ecommerceapp.model.persistence.repositories.UserRepository;
+import com.ansagan.ecommerceapp.model.User;
+import com.ansagan.ecommerceapp.model.UserOrder;
+import com.ansagan.ecommerceapp.repositories.OrderRepository;
+import com.ansagan.ecommerceapp.repositories.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,15 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/order")
 public class OrderController {
 
-	private final UserRepository userRepository;
-	private final OrderRepository orderRepository;
+	@Autowired
+	private UserRepository userRepository;
+
+	@Autowired
+	private OrderRepository orderRepository;
 
 	private final Logger log = LoggerFactory.getLogger(OrderController.class);
-
-	public OrderController(UserRepository userRepository, OrderRepository orderRepository) {
-		this.userRepository = userRepository;
-		this.orderRepository = orderRepository;
-	}
 
 	@PostMapping("/submit/{username}")
 	public ResponseEntity<UserOrder> submit(@PathVariable String username) {

@@ -1,7 +1,8 @@
 package com.ansagan.ecommerceapp.controller;
 
-import com.ansagan.ecommerceapp.model.persistence.Item;
-import com.ansagan.ecommerceapp.model.persistence.repositories.ItemRepository;
+import com.ansagan.ecommerceapp.model.Item;
+import com.ansagan.ecommerceapp.repositories.ItemRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,11 +16,8 @@ import java.util.List;
 @RequestMapping("/api/item")
 public class ItemController {
 
-	private final ItemRepository itemRepository;
-
-	public ItemController(ItemRepository itemRepository) {
-		this.itemRepository = itemRepository;
-	}
+	@Autowired
+	private ItemRepository itemRepository;
 
 	@GetMapping
 	public ResponseEntity<List<Item>> getItems() {

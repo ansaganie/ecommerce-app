@@ -1,8 +1,8 @@
 package com.ansagan.ecommerceapp.controller;
 
-import com.ansagan.ecommerceapp.model.persistence.User;
-import com.ansagan.ecommerceapp.model.persistence.repositories.CartRepository;
-import com.ansagan.ecommerceapp.model.persistence.repositories.UserRepository;
+import com.ansagan.ecommerceapp.model.User;
+import com.ansagan.ecommerceapp.repositories.CartRepository;
+import com.ansagan.ecommerceapp.repositories.UserRepository;
 import com.ansagan.ecommerceapp.model.requests.CreateUserRequest;
 import org.junit.Before;
 import org.junit.Test;
